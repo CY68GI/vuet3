@@ -1,7 +1,7 @@
 # Vue 3 + TypeScript + Vite
 
 > **注意：此项目仅用于学习Vue3，没有任何其他作用，看到请忽略**
-> 
+>
 > **Note: This project is only for learning Vue 3, has no other purpose, please ignore if you see it**
 
 ## 中文说明

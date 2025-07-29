@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+// import FilterBar from './components/FilterBar.vue';
+// import DataTable from './components/DataTable.vue';
+// import TableRow from './components/TableRow.vue';
+// import ActionButton from './components/ActionButton.vue';
+// import PaginationBar from './components/PaginationBar.vue';
 </script>
 
 <template>
@@ -12,6 +17,11 @@ import HelloWorld from './components/HelloWorld.vue'
     </a>
   </div>
   <HelloWorld msg="Vite + Vue 应用" />
+  <!-- <FilterBar />
+  <DataTable />
+  <TableRow />
+  <ActionButton />
+  <PaginationBar /> -->
 </template>
 
 <style scoped>
@@ -21,9 +31,11 @@ import HelloWorld from './components/HelloWorld.vue'
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }

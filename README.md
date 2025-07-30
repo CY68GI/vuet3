@@ -1,17 +1,83 @@
 # Vue 3 + TypeScript + Vite
 
-> **注意：此项目仅用于学习Vue3，没有任何其他作用，看到请忽略**
+[中文](./README.md) | [English](./Docs/readme_en.md)
+
+## ⚠️ 重要声明
+
+> **🚨 重要提醒：此项目仅用于学习Vue3技术，没有任何其他商业或实际用途，看到请忽略！**
 >
-> **Note: This project is only for learning Vue 3, has no other purpose, please ignore if you see it**
+> 此项目不包含任何敏感数据，所有数据均为模拟数据，仅用于演示Vue3的功能和组件开发。
 
-## 中文说明
+## 项目概述
 
-这个模板可以帮助您开始使用 Vue 3 和 TypeScript 在 Vite 中进行开发。该模板使用 Vue 3 的 `<script setup>` 单文件组件，查看 [script setup 文档](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) 了解更多信息。
+这是一个基于Vue 3 + TypeScript + Vite构建的前端项目，主要用于学习和演示Vue 3的核心功能和组件开发。该项目实现了一个"网站浏览数据管理系统"界面，展示了Vue 3的组合式API、组件通信、响应式数据管理等特性。
 
-在 [Vue 文档 TypeScript 指南](https://vuejs.org/guide/typescript/overview.html#project-setup) 中了解更多关于推荐的项目设置和 IDE 支持。
+### 功能特点
 
-## English Description
+- **筛选功能**：支持按关键词、日期范围、网站类目和时间格式进行数据筛选
+- **数据表格**：展示网站浏览数据，支持行选择、编辑和删除操作
+- **分页功能**：智能分页导航，支持页码跳转和每页显示条数调整
+- **响应式设计**：适配不同屏幕尺寸，提供良好的移动端体验
+- **组件化开发**：采用组件化思想，提高代码复用性和可维护性
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### 技术栈
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+- **前端框架**：Vue 3
+- **开发语言**：TypeScript
+- **构建工具**：Vite
+- **组件规范**：Vue 3 `<script setup>` 语法糖
+- **响应式API**：Composition API (ref, reactive, computed, watch等)
+
+## 项目结构
+
+```
+vue_t3/
+├── src/
+│   ├── components/    # 组件目录
+│   │   ├── ActionButton.vue    # 操作按钮组件
+│   │   ├── DataTable.vue       # 数据表格组件
+│   │   ├── FilterBar.vue       # 筛选栏组件
+│   │   ├── PaginationBar.vue   # 分页栏组件
+│   │   ├── TableRow.vue        # 表格行组件
+│   │   └── HelloWorld.vue      # 示例组件
+│   ├── App.vue                 # 应用根组件
+│   ├── main.ts                 # 应用入口文件
+│   └── ...                     # 其他配置文件
+├── index.html                  # HTML模板
+└── ...                         # 其他项目文件
+```
+
+## 组件说明
+
+- **FilterBar.vue**：提供数据筛选功能，包括搜索、日期范围、网站类目选择和时间格式设置
+- **DataTable.vue**：展示数据表格，支持数据筛选、分页、选择、编辑和删除功能
+- **PaginationBar.vue**：提供分页导航功能，包括页码选择、跳转和每页显示条数调整
+- **TableRow.vue**：表格行组件，展示单行数据和操作按钮
+- **ActionButton.vue**：可自定义类型、大小和图标的按钮组件
+
+## 使用说明
+
+### 安装依赖
+
+```bash
+npm install
+```
+
+### 启动开发服务器
+
+```bash
+npm run dev
+```
+
+### 构建生产版本
+
+```bash
+npm run build
+```
+
+### 注意事项
+
+- 本项目仅用于学习和演示Vue 3技术，不包含任何实际业务逻辑
+- 所有数据均为模拟数据，不包含任何敏感信息
+- 项目中的"网站浏览数据管理系统"界面仅为展示Vue 3功能而设计，不代表任何真实系统
+- 请勿将此项目用于生产环境或商业用途

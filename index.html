@@ -1,13 +1,27 @@
+<!-- 文档类型声明，指定为HTML5文档 -->
 <!doctype html>
+<!-- HTML根元素，设置语言为中文（中国） -->
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Vue + TypeScript 应用</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+<!-- HTML头部元素，包含文档的元数据 -->
+<head>
+  <!-- 字符编码声明，使用UTF-8编码 -->
+  <meta charset="UTF-8" />
+  <!-- 网站图标链接，使用SVG格式 -->
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <!-- 视口设置，确保在移动设备上正确显示，宽度为设备宽度，初始缩放比例为1.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 网页标题，显示在浏览器标签页上 -->
+  <title>Vite + Vue + TypeScript 应用</title>
+</head>
+
+<!-- HTML主体元素，包含网页的可见内容 -->
+<body>
+  <!-- Vue应用的根挂载点，Vue应用将在此div元素中渲染 -->
+  <div id="app"></div>
+  <!-- 引入TypeScript模块作为入口文件，type="module"表示这是一个ES模块 -->
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+<!-- HTML根元素结束标签 -->
 </html>

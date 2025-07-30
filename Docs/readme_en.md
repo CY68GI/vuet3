@@ -2,7 +2,7 @@
 
 [中文](../README.md) | [English](./readme_en.md)
 
-## ⚠️ Important Statement:
+## ⚠️ Important Statement
 
 > **🚨 Important Note: This project is ONLY for learning Vue 3, has NO other purpose, please IGNORE if you see it!**
 >

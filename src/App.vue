@@ -5,6 +5,7 @@ import { ref, reactive, onMounted, watch } from 'vue';
 import FilterBar from './components/FilterBar.vue';  // 筛选栏组件
 import DataTable from './components/DataTable.vue';  // 数据表格组件
 import PaginationBar from './components/PaginationBar.vue';  // 分页栏组件
+import DailyBackground from './components/DailyBackground.vue';  // 每日背景组件
 
 // 筛选条件 - 使用reactive创建响应式对象
 const filters = reactive({
@@ -81,43 +82,57 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="container">
-    <!-- 页面头部区域 -->
-    <header class="header">
-      <h1>网站浏览数据管理系统</h1>
-    </header>
+  <!-- 背景组件单独放置，不包裹内容 -->
+  <DailyBackground />
 
-    <!-- 页面主体内容区域 -->
-    <main class="card">
-      <!-- 筛选栏组件 -->
-      <!-- 监听filter-change事件，当筛选条件变化时调用handleFilterChange方法 -->
-      <!-- 监听batch-delete事件，当批量删除时调用handleBatchDelete方法 -->
-      <FilterBar @filter-change="handleFilterChange" @batch-delete="handleBatchDelete" />
+  <!-- 内容区域独立于背景组件 -->
+  <div class="app-content">
+    <div class="container">
+      <!-- 页面头部区域 -->
+      <header class="header">
+        <h1>网站浏览数据管理系统</h1>
+      </header>
 
-      <!-- 数据表格组件 -->
-      <!-- 传入filters和pagination作为props -->
-      <!-- 监听delete-item事件，当删除单个项目时调用handleDeleteItem方法 -->
-      <!-- 监听delete-items事件，当批量删除时调用handleBatchDelete方法 -->
-      <!-- 监听total-items-change事件，当总数据条数变化时调用updateTotalItems方法 -->
-      <DataTable :filters="filters" :pagination="pagination" @delete-item="handleDeleteItem"
-        @delete-items="handleBatchDelete" @total-items-change="updateTotalItems" />
+      <!-- 页面主体内容区域 -->
+      <main class="card">
+        <!-- 筛选栏组件 -->
+        <!-- 监听filter-change事件，当筛选条件变化时调用handleFilterChange方法 -->
+        <!-- 监听batch-delete事件，当批量删除时调用handleBatchDelete方法 -->
+        <FilterBar @filter-change="handleFilterChange" @batch-delete="handleBatchDelete" />
 
-      <!-- 分页栏组件 -->
-      <!-- 传入totalItems、pageSize和currentPage作为props -->
-      <!-- 监听page-change事件，当页码变化时调用handlePageChange方法 -->
-      <!-- 监听page-size-change事件，当每页显示条数变化时调用handlePageSizeChange方法 -->
-      <PaginationBar :total-items="totalItems" :page-size="pagination.pageSize" :current-page="pagination.currentPage"
-        @page-change="handlePageChange" @page-size-change="handlePageSizeChange" />
-    </main>
+        <!-- 数据表格组件 -->
+        <!-- 传入filters和pagination作为props -->
+        <!-- 监听delete-item事件，当删除单个项目时调用handleDeleteItem方法 -->
+        <!-- 监听delete-items事件，当批量删除时调用handleBatchDelete方法 -->
+        <!-- 监听total-items-change事件，当总数据条数变化时调用updateTotalItems方法 -->
+        <DataTable :filters="filters" :pagination="pagination" @delete-item="handleDeleteItem"
+          @delete-items="handleBatchDelete" @total-items-change="updateTotalItems" />
 
-    <!-- 页面底部区域 -->
-    <footer class="footer">
-      <p>© 2024 网站浏览数据管理系统</p>
-    </footer>
+        <!-- 分页栏组件 -->
+        <!-- 传入totalItems、pageSize和currentPage作为props -->
+        <!-- 监听page-change事件，当页码变化时调用handlePageChange方法 -->
+        <!-- 监听page-size-change事件，当每页显示条数变化时调用handlePageSizeChange方法 -->
+        <PaginationBar :total-items="totalItems" :page-size="pagination.pageSize" :current-page="pagination.currentPage"
+          @page-change="handlePageChange" @page-size-change="handlePageSizeChange" />
+      </main>
+
+      <!-- 页面底部区域 -->
+      <footer class="footer">
+        <p>© 2024 网站浏览数据管理系统</p>
+      </footer>
+    </div>
   </div>
 </template>
 
 <style scoped>
+/* 应用内容区域样式 */
+.app-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100vh;
+}
+
 /* 移除所有重复的样式，使用全局CSS变量 */
 /* scoped属性表示这些样式只应用于当前组件，不会影响其他组件 */
 </style>
